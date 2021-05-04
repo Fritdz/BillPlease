@@ -23,13 +23,13 @@
             android:text="Amount" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/etPaid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:hint="Enter Amount Paid"
-            android:inputType="textPersonName" />
+            android:inputType="numberDecimal" />
 
         <TextView
             android:id="@+id/textView"
@@ -39,13 +39,13 @@
             android:text="Num of Pax" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/etPax"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:hint="Enter Number of Pax"
-            android:inputType="textPersonName" />
+            android:inputType="number" />
 
     </LinearLayout>
 
@@ -57,21 +57,25 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button"
+        <ToggleButton
+            android:id="@+id/btnSvs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginHorizontal="5dp"
-            android:text="NO SVS" />
+            android:layout_weight="1"
+            android:text="NO SVS"
+            android:textOff="NO SVS"
+            android:textOn="SVS" />
 
-        <Button
-            android:id="@+id/button2"
+        <ToggleButton
+            android:id="@+id/btnGst"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginHorizontal="5dp"
-            android:text="GST" />
+            android:layout_weight="1"
+            android:text="GST"
+            android:textOff="NO GST"
+            android:textOn="GST" />
     </LinearLayout>
 
     //Discount
@@ -89,45 +93,74 @@
             android:text="Discount (%)" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/etDiscount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Enter discou" />
+            android:inputType="number"
+            android:hint="Enter discount" />
     </LinearLayout>
 
     //CashPaynow
 
     <RadioGroup
-        android:id="@+id/CashPayNow"
+        android:id="@+id/radioPayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioButtonCash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Cash"
+            android:checked="true"/>
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioButtonPayNow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="PayNow" />
+
+        <EditText
+            android:id="@+id/etTel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="phone" />
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/textView4"
+    //SplitReset
+
+    <LinearLayout
+        android:id="@+id/splitreset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSplit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:text="SPLIT" />
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:text="RESET" />
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/totalPay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text=""
+        android:textSize="20sp"/>
+
 
 </LinearLayout>
